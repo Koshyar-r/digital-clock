@@ -1,0 +1,52 @@
+@font-face {
+    font-family: DigitalNumbers;
+    src: url(assets/DigitalNumbers-Regular.ttf);
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: DigitalNumbers;
+}
+html, body {
+    background: #023047;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    width: 550px;
+    height: 200px;
+    position: relative;
+    border-radius: 50px;
+    background: #219ebc;
+}
+.container .display,
+.container span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container .display {
+    z-index: 999;
+    height: 85px;
+    width: 345px;
+    background: #1b1b1b;
+    border-radius: 6px;
+    text-align: center;
+}
+.display #time {
+    line-height: 85px;
+    color: #f8eded;
+    font-size: 35px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.container span {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background: inherit;
+}
