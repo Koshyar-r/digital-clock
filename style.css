@@ -9,18 +9,11 @@
     font-family: DigitalNumbers;
 }
 html, body {
-    background: #023047;
+    background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-.container {
-    width: 550px;
-    height: 200px;
-    position: relative;
-    border-radius: 50px;
-    background: #219ebc;
 }
 .container .display,
 .container span {
@@ -29,24 +22,63 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.container .display {
-    z-index: 999;
-    height: 85px;
-    width: 345px;
-    background: #1b1b1b;
-    border-radius: 6px;
-    text-align: center;
-}
 .display #time {
     line-height: 85px;
-    color: #f8eded;
+    color: #0bfaaa;
     font-size: 35px;
-    font-weight: 900;
     letter-spacing: 1px;
+    text-shadow: 0 0 20px #0bfaaa;
+}
+.display #time:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: -1;
+    color: #0bfaaa;
+    filter: blur(10px);
+}
+.display #time:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #05d892;
+    z-index: -2;
+    opacity: .5;
+    filter: blur(200px);
 }
 .container span {
     height: 100%;
     width: 100%;
     border-radius: 10px;
     background: inherit;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+    .display #time {
+        font-size: 5vw;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .display #time {
+        font-size: 5vw;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .display #time {
+        font-size: 5vw;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .display #time {
+        font-size: 5vw;
+    }
+}
+@media (min-width: 1201px) {
+    .display #time {
+        font-size: 5vw;
+    }
 }
